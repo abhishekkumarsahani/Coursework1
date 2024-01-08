@@ -1,0 +1,40 @@
+﻿@page "/login"
+@inject NavigationManager NavigationManager
+@using Coursework1.Model;
+@using CsvHelper;
+@using System.Globalization;
+@using Coursework1.Service;
+@using Coursework1;
+<MudContainer>
+    <MudItem xs="12" md="6" lg="4">
+        <div class="login-container">
+            <h3>Login</h3>
+            <MudTextField Label="Username" @bind-Value="username" />
+            <MudTextField Label="Password" @bind-Value="password" Type="Password" />
+            <div>
+                <MudButton Color="Color.Primary" Variant="Variant.Filled" OnClick="PerformLogin">Login</MudButton>
+            </div>
+        </div>
+    </MudItem>
+</MudContainer>
+
+<style>
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f4f4f4;
+    }
+
+    .login-container {
+        background-color: #ffffff;
+        border: 1px solid #ddd;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* You can customize the styling for MudTextField and MudButton according to your needs */
+</style>

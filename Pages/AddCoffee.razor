@@ -1,0 +1,22 @@
+﻿@page "/coffee-types"
+@using Coursework1.Model
+
+
+<MudCard>
+    <MudCardHeader>
+        <MudCardHeaderContent>
+            <MudText>Add Coffee</MudText>
+        </MudCardHeaderContent>
+    </MudCardHeader>
+    <MudCardContent>
+        <EditForm Model="@newCoffeeType">
+            <MudTextField @bind-Value="@newCoffeeType.Id" Label="Id" Variant="Variant.Text" Margin="Margin.Normal"></MudTextField>
+            <MudTextField @bind-Value="@newCoffeeType.CoffeeName" Label="CoffeeName" Variant="Variant.Text" Margin="Margin.Normal"></MudTextField>
+            <MudTextField @bind-Value="@newCoffeeType.Price" Label="Price" Variant="Variant.Text" Margin="Margin.Normal"></MudTextField>
+            <br />
+            <MudButton Variant="Variant.Filled" Color="Color.Info" @onclick="AddCoffeeType">Add </MudButton>
+        </EditForm>
+    </MudCardContent>
+</MudCard>
+
+
