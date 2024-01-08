@@ -1,7 +1,16 @@
 ﻿@page "/"
+@using CsvHelper;
+@using System.Globalization;
+@using Coursework1.Service;
+@using Coursework1;
+@inject NavigationManager NavigationManager
+@inject MudBlazor.ISnackbar Snackbar
+@layout EmptyLayout
 
-<h1>Hello, world!</h1>
+<div class="d-flex justify-center align-center" style="height: 100vh">
+    <MudStack AlignItems="AlignItems.Center">
+        <MudIcon Icon="@Icons.Material.Filled.BikeScooter" Color="Color.Primary" Style="font-size:120" />
+        <MudProgressLinear Color="Color.Primary" Indeterminate="true" />
+    </MudStack>
+</div>
 
-Welcome to your new app.
-
-<SurveyPrompt Title="How is Blazor working for you?" />
