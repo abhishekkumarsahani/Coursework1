@@ -11,7 +11,7 @@ namespace Coursework1.Service
     {
         List<Coffee> GetCoffeeTypes();
         void AddCoffeeType(Coffee coffeeType);
-        void UpdateCoffeeType(Coffee coffeeType);
+        void UpdateCoffee(Coffee coffeeType);
         void DeleteCoffeeType(int coffeeTypeId);
 
         List<AddIn> GetAddIns();

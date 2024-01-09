@@ -14,37 +14,15 @@ namespace Coursework1.Service
         private string coffeeTypesFilePath = "C:\\Abhi Mud\\Coursework1\\Data\\coffee_types.csv"; // Path to coffee types CSV
         private string addInsFilePath = "C:\\Abhi Mud\\Coursework1\\Data\\add_ins.csv"; // Path to add-ins CSV
 
-        //public List<Coffee> GetCoffeeTypes()
-        //{
-        //    using (var reader = new StreamReader(coffeeTypesFilePath))
-        //    using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
-        //    {
-        //        return csv.GetRecords<Coffee>().ToList();
-        //    }
-        //}
         public List<Coffee> GetCoffeeTypes()
         {
-            List<Coffee> coffeeTypes = new List<Coffee>();
-
-            try
+            using (var reader = new StreamReader(coffeeTypesFilePath))
+            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
             {
-                using (var reader = new StreamReader(coffeeTypesFilePath))
-                using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
-                {
-                    coffeeTypes = csv.GetRecords<Coffee>().ToList();
-                }
+                return csv.GetRecords<Coffee>().ToList();
             }
-            catch (Exception ex)
-            {
-                // Handle the exception or log it
-                Console.WriteLine($"Error reading coffee types CSV: {ex.Message}");
-                // You can also throw the exception for higher-level handling if needed
-                // throw;
-            }
-
-            return coffeeTypes;
         }
-
+       
 
         public void AddCoffeeType(Coffee coffeeType)
         {
@@ -59,9 +37,18 @@ namespace Coursework1.Service
             }
         }
 
-        public void UpdateCoffeeType(Coffee coffeeType)
+        public void UpdateCoffee(Coffee updatedCoffeeType)
         {
-            throw new NotImplementedException();
+            var records = GetCoffeeTypes();
+            var existingCoffeeType = records.Find(c => c.Id == updatedCoffeeType.Id);
+
+            if (existingCoffeeType != null)
+            {
+                existingCoffeeType.CoffeeName = updatedCoffeeType.CoffeeName;
+                existingCoffeeType.Price = updatedCoffeeType.Price;
+
+                WriteRecordsToFile(records);
+            }
         }
 
         public void DeleteCoffeeType(int coffeeTypeId)

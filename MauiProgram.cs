@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Coursework1.Service;
+using Microsoft.Extensions.Logging;
 using MudBlazor.Services;
 
 namespace Coursework1;
@@ -17,9 +18,11 @@ public static class MauiProgram
 
 		builder.Services.AddMauiBlazorWebView();
 		builder.Services.AddMudServices();
+		builder.Services.AddScoped<ICoffeeService, CoffeeService>();
+
 
 #if DEBUG
-		builder.Services.AddBlazorWebViewDeveloperTools();
+        builder.Services.AddBlazorWebViewDeveloperTools();
 		builder.Logging.AddDebug();
 #endif
 

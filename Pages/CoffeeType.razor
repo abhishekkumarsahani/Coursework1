@@ -1,0 +1,46 @@
+﻿@page "/coffee-types"
+@using Coursework1.Model
+@using Coursework1.Service
+@inject MudBlazor.ISnackbar Snackbar
+@inject ICoffeeService CoffeeService
+
+<StackLayout>
+    <MudCard>
+        <MudCardHeader>
+            <MudCardHeaderContent>
+                <MudText>Coffee List</MudText>
+            </MudCardHeaderContent>
+        </MudCardHeader>
+        <MudCardContent>
+            <MudTable Items="@coffeeTypes">
+                <HeaderContent>
+                    <MudTh>Id</MudTh>
+                    <MudTh>Coffee Name</MudTh>
+                    <MudTh>Price</MudTh>
+                    <MudTh>Action</MudTh>
+                </HeaderContent>
+                <RowTemplate>
+                    <MudTd>@context.Id</MudTd>
+                    <MudTd>@context.CoffeeName</MudTd>
+                    <MudTd>@context.Price</MudTd>
+                        <MudTd>
+                            <!-- Button to trigger price change -->
+                            <MudButton OnClick="@(() => { enteredPassword = ""; coffeeIdToUpdate = context.Id; })">Edit Price</MudButton>
+                            @if (coffeeIdToUpdate == context.Id)
+                        {
+                            <div>
+                               
+                                <input type="password" @bind="enteredPassword" placeholder="Enter admin password" />
+                                <input type="number" @bind="newPrice" placeholder="Enter new price" />
+                                <MudButton OnClick="@ChangeCoffeePrice">Confirm</MudButton>
+                            </div>
+                        }
+                    </MudTd>
+                    
+                </RowTemplate>
+            </MudTable>
+        </MudCardContent>
+    </MudCard>
+</StackLayout>
+
+
