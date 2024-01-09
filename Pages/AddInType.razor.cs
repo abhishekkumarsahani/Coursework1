@@ -15,10 +15,10 @@ namespace Coursework1.Pages
 
         protected override void OnInitialized()
         {
-            LoadCoffeeTypes();
+            LoadAddinTypes();
         }
 
-        private void LoadCoffeeTypes()
+        private void LoadAddinTypes()
         {
             base.OnInitialized();
             coffeeService = new CoffeeService();

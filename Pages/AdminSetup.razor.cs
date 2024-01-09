@@ -8,7 +8,7 @@ namespace Coursework1.Pages
         // Method to navigate to the Coffee Panel
         private void GoToCoffeePanel()
         {
-            NavigationManager.NavigateTo("/coffee-panel");
+            NavigationManager.NavigateTo("/StaffPage");
         }
 
         // Method to generate the PDF file for orders

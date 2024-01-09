@@ -9,6 +9,6 @@ namespace Coursework1.Service
 {
      internal interface ICsvHelper
     {
-        List<User> ReadUsersFromCsv();
+        List<User> GetUsers();
     }
 }

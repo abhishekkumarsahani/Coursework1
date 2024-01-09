@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Coursework1.Enum;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,5 +11,6 @@ namespace Coursework1.Model
     {
         public string Username { get; set; }
         public string Password { get; set; }
+        public UserRole Role { get; set; }
     }
 }

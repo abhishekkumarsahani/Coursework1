@@ -17,7 +17,7 @@ namespace Coursework1.Pages
             base.OnInitialized();
 
             csvHelper = new MyCsvHelper();
-            users = csvHelper.ReadUsersFromCsv();
+            users = csvHelper.GetUsers();
         }
 
         private void PerformLogin()

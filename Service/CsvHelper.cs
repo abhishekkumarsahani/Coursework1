@@ -13,7 +13,7 @@ namespace Coursework1.Service
 {
     internal class MyCsvHelper : ICsvHelper 
     {
-        public  List<User> ReadUsersFromCsv()
+        public  List<User> GetUsers()
         {
             List<User> users;
 
