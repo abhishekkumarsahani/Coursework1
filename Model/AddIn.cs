@@ -9,7 +9,7 @@ namespace Coursework1.Model
     internal class AddIn
     {
         public int Id { get; set; }
-        public string Name { get; set; }
+        public string AddinName { get; set; }
         public decimal Price { get; set; }
     }
 }

@@ -1,14 +1,16 @@
 ﻿@page "/admin"
 @inject NavigationManager NavigationManager
-@using Coursework1.Service 
+@using Coursework1.Service
 
-<h3>Coffee Types</h3>
-
-
+<h3>Admin Dashboard</h3>
 
 <div>
-    
     <button @onclick="GoToCoffeePanel">Add Coffee</button>
+</div>
+
+<div>
+    <!-- Button to generate PDF file for orders -->
+    <button @onclick="GeneratePDF" class="btn btn-primary">Generate Orders PDF</button>
 </div>
 
 
